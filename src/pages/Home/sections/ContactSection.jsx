@@ -33,7 +33,7 @@ const contactLinks = [
     icon: faFigma,
     label: "Figma",
     value: "Xem các thiết kế UI/UX",
-    href: "#",
+    href: SOCIAL_LINKS.figma,
     color: "hover:text-pink-500 hover:border-pink-500/30",
   },
 ];

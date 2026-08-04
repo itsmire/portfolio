@@ -53,7 +53,9 @@ export default function Footer() {
               <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
             </a>
             <a
-              href="#"
+              href={SOCIAL_LINKS.figma}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-zinc-500 hover:text-pink-500 dark:text-zinc-400 dark:hover:text-pink-400 transition-colors duration-300"
               aria-label="Figma"
             >

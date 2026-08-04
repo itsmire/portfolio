@@ -8,6 +8,7 @@ export const SOCIAL_LINKS = {
   github: "https://github.com/itsmire",
   linkedin: "https://www.linkedin.com/in/my-tr%E1%BA%A7n-v%C5%A9-uy%C3%AAn-796047370/",
   email: "tranvuuyenmy0305@gmail.com",
+  figma: "https://www.figma.com/files/team/1423626767721693195/resources/community/@mire10?fuid=1423626765901109095",
 };
 
 export const SITE_META = {
