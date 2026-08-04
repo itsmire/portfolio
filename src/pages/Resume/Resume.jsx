@@ -30,11 +30,10 @@ export default function Resume() {
           Trần Vũ Uyên My
         </h1>
         <p className="text-lg text-purple-500 dark:text-purple-400 font-medium mb-6">
-          Kỹ sư Phần mềm & Full-stack Developer
+          Frontend Developer & QA Tester
         </p>
         <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto leading-relaxed">
-          Sinh viên năm cuối tại IUH TP.HCM. Đam mê xây dựng sản phẩm web đẹp,
-          hiệu năng cao và trải nghiệm người dùng tốt.
+          Sinh viên năm cuối tại IUH TP.HCM. Chuyên phát triển ứng dụng Frontend mượt mà, kiểm thử chất lượng (QA/QC) và hỗ trợ vận hành Backend.
         </p>
 
         {/* Action buttons */}

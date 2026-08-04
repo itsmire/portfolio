@@ -43,7 +43,7 @@ export default function HeroSection() {
                 Trần Vũ Uyên My
               </span>
               <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-700 dark:text-zinc-300">
-                Kỹ sư Phần mềm & Full-stack Developer
+                Frontend Developer & QA Tester
               </span>
             </motion.h1>
 
@@ -51,7 +51,7 @@ export default function HeroSection() {
               variants={fadeUp}
               className="text-base sm:text-lg leading-relaxed mb-8 max-w-2xl text-zinc-600 dark:text-zinc-400"
             >
-              Sinh viên năm cuối chuyên ngành Kỹ thuật Phần mềm tại Đại học Công nghiệp TP.HCM (IUH). Chuyên sâu phát triển hệ thống Full-stack tin cậy và tối ưu hóa trải nghiệm người dùng.
+              Sinh viên năm cuối chuyên ngành Kỹ thuật Phần mềm tại Đại học Công nghiệp TP.HCM (IUH). Chuyên phát triển ứng dụng Frontend mượt mà, kiểm thử chất lượng (QA/QC) và hỗ trợ vận hành Backend.
             </motion.p>
 
             {/* CTA Buttons & Social Links */}
@@ -176,8 +176,8 @@ export default function HeroSection() {
                     <FontAwesomeIcon icon={faCode} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-zinc-900 dark:text-zinc-100 font-heading">Full-stack Dev</p>
-                    <p className="text-[9px] text-zinc-500 dark:text-zinc-400">Node.js, React & Java</p>
+                    <p className="text-[10px] font-bold text-zinc-900 dark:text-zinc-100 font-heading">Frontend Dev</p>
+                    <p className="text-[9px] text-zinc-500 dark:text-zinc-400">React, Tailwind & JS/TS</p>
                   </div>
                 </motion.div>
 
@@ -191,8 +191,8 @@ export default function HeroSection() {
                     <FontAwesomeIcon icon={faPalette} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-zinc-900 dark:text-zinc-100 font-heading">Software Engineer</p>
-                    <p className="text-[9px] text-zinc-500 dark:text-zinc-400">System & Database Design</p>
+                    <p className="text-[10px] font-bold text-zinc-900 dark:text-zinc-100 font-heading">QA / QC Tester</p>
+                    <p className="text-[9px] text-zinc-500 dark:text-zinc-400">Test Cases & Bug Tracking</p>
                   </div>
                 </motion.div>
 

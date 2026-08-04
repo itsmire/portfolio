@@ -12,8 +12,8 @@ export const SOCIAL_LINKS = {
 
 export const SITE_META = {
   name: "Trần Vũ Uyên My",
-  role: "Kỹ Sư Kỹ Thuật Phần Mềm & Nhà Thiết Kế UI/UX",
-  tagline: "Kiến tạo trải nghiệm số tinh tế từ kiến trúc phần mềm chuẩn mực.",
+  role: "Frontend Developer & QA Tester",
+  tagline: "Phát triển giao diện ứng dụng Frontend mượt mà và bảo đảm chất lượng phần mềm chuyên nghiệp.",
   location: "TP. Hồ Chí Minh, Việt Nam",
   university: "Đại học Công nghiệp TP.HCM (IUH)",
   major: "Kỹ thuật phần mềm - Khoa Công nghệ thông tin",
