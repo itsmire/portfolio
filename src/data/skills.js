@@ -4,7 +4,7 @@
  */
 export const SKILLS = {
   frontend: {
-    label: "Frontend Development (Chính)",
+    label: "Frontend Development",
     icon: "💻",
     items: [
       { name: "JavaScript / TypeScript" },
@@ -14,7 +14,7 @@ export const SKILLS = {
     ],
   },
   testing: {
-    label: "QA / QC & Testing (Chính)",
+    label: "QA / QC & Testing",
     icon: "🔍",
     items: [
       { name: "QA/QC (Software Testing & QA)" },
@@ -24,7 +24,7 @@ export const SKILLS = {
     ],
   },
   backend: {
-    label: "Backend & Database (Phụ)",
+    label: "Backend & Database",
     icon: "⚙️",
     items: [
       { name: "Node.js (Express)" },
@@ -34,7 +34,7 @@ export const SKILLS = {
     ],
   },
   design: {
-    label: "UI/UX Design (Phụ)",
+    label: "UI/UX Design",
     icon: "🎨",
     items: [
       { name: "Figma (Design Systems)" },
