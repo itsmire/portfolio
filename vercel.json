@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!assets/|adapted-app/|images/|avatar.jpg|favicon.svg|icons.svg|resume.pdf).*)" ,
+      "destination": "/index.html"
+    }
+  ]
+}
