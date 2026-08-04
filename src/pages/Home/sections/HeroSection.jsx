@@ -42,9 +42,6 @@ export default function HeroSection() {
               <span className="bg-gradient-to-r from-purple-500 via-purple-400 to-indigo-500 bg-clip-text text-transparent block sm:inline">
                 Trần Vũ Uyên My
               </span>
-              <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-700 dark:text-zinc-300">
-                Frontend Developer & QA Tester
-              </span>
             </motion.h1>
 
             <motion.p
