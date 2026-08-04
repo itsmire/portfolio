@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdaptEd — Adaptive English Learning System · Case Study Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- PORTFOLIO WEB HEADER -->
+  <header class="portfolio-header">
+    <div class="header-brand">
+      <div class="brand-logo">🎓</div>
+      <div class="brand-text">
+        <h1>AdaptEd</h1>
+        <span>Adaptive English Learning System</span>
+      </div>
+    </div>
+    
+    <div class="header-controls">
+      <!-- View Mode Tabs -->
+      <div class="view-toggle-grp">
+        <button class="toggle-btn active" id="btnToggleGrid">📱 UI Kit Grid</button>
+        <button class="toggle-btn" id="btnToggleEmulator">🕹️ Live Emulator</button>
+      </div>
+
+      <!-- Theme Switcher -->
+      <button class="theme-toggle-btn" id="btnGlobalThemeToggle">
+        <span class="theme-icon">🌓</span>
+        <span id="themeToggleText">Light Mode</span>
+      </button>
+
+      <!-- Presentation Mode Toggle -->
+      <button class="presentation-toggle-btn" id="btnPresentationToggle">
+        <span class="pres-icon">👁️</span>
+        <span id="presToggleText">Hide Helpers</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="portfolio-main">
+
+    <!-- ==========================================
+         VIEW 1: UI KIT SHOWCASE GRID
+         ========================================== -->
+    <section class="showcase-section active" id="view-grid">
+    
+
+      <div class="screens-grid">
+        <!-- Grid placeholders will be filled dynamically by JavaScript -->
+        <div class="phone-wrap" id="grid-splash" data-screen="splash"><div class="phone-label">01. Splash Screen</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-welcome" data-screen="welcome"><div class="phone-label">02. Welcome Portal</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-login" data-screen="login"><div class="phone-label">03. User Log In</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-ob-goals" data-screen="onboarding-goals"><div class="phone-label">04. Goal Selection</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-ob-style" data-screen="onboarding-style"><div class="phone-label">05. Learning Style</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-placement" data-screen="placement"><div class="phone-label">06. Placement Test</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-experience" data-screen="experience-toggle"><div class="phone-label">07. Choose Experience</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-dash-youth" data-screen="dashboard-youth"><div class="phone-label">08. Home Dashboard (Youth)</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-dash-senior" data-screen="dashboard-senior"><div class="phone-label">09. Home Dashboard (Senior)</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-curriculum" data-screen="curriculum"><div class="phone-label">10. Personalized Curriculum</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-lesson" data-screen="lesson"><div class="phone-label">11. Adaptive Lesson</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-quiz" data-screen="quiz"><div class="phone-label">12. Adaptive Quiz</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-analytics" data-screen="analytics"><div class="phone-label">13. Learner Analytics</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-recommendations" data-screen="recommendations"><div class="phone-label">14. Smart Recommendations</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-tutor" data-screen="tutor"><div class="phone-label">15. AI Tutor Support</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-progress" data-screen="progress"><div class="phone-label">16. Milestone Progress</div><div class="phone"></div></div>
+        <div class="phone-wrap" id="grid-profile" data-screen="profile"><div class="phone-label">17. Profile & Settings</div><div class="phone"></div></div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 2: LIVE APP EMULATOR
+         ========================================== -->
+    <section class="emulator-section" id="view-emulator">
+      <div class="emulator-container">
+        
+        <!-- SIDEBAR CONTROLS -->
+        <aside class="control-panel">
+          <h3>Interactive Navigator</h3>
+          <p>Click on bottom navigation tabs in the phone or use screen selectors below:</p>
+          
+          <div class="screen-selector" id="emulatorScreenSelector">
+            <button class="screen-btn active" data-target="splash"><span>1. Splash Screen</span><span class="num">01</span></button>
+            <button class="screen-btn" data-target="welcome"><span>2. Welcome Portal</span><span class="num">02</span></button>
+            <button class="screen-btn" data-target="login"><span>3. User Log In</span><span class="num">03</span></button>
+            <button class="screen-btn" data-target="onboarding-goals"><span>4. Goal Selection</span><span class="num">04</span></button>
+            <button class="screen-btn" data-target="onboarding-style"><span>5. Learning Style</span><span class="num">05</span></button>
+            <button class="screen-btn" data-target="placement"><span>6. Placement Test</span><span class="num">06</span></button>
+            <button class="screen-btn" data-target="experience-toggle"><span>7. Choose Experience</span><span class="num">07</span></button>
+            <button class="screen-btn" data-target="dashboard-youth"><span>8. Home Dashboard (Youth)</span><span class="num">08</span></button>
+            <button class="screen-btn" data-target="dashboard-senior"><span>9. Home Dashboard (Senior)</span><span class="num">09</span></button>
+            <button class="screen-btn" data-target="curriculum"><span>10. Curriculum Pathway</span><span class="num">10</span></button>
+            <button class="screen-btn" data-target="lesson"><span>11. Adaptive Lesson</span><span class="num">11</span></button>
+            <button class="screen-btn" data-target="quiz"><span>12. Adaptive Quiz</span><span class="num">12</span></button>
+            <button class="screen-btn" data-target="analytics"><span>13. Learner Analytics</span><span class="num">13</span></button>
+            <button class="screen-btn" data-target="recommendations"><span>14. Smart Recommendations</span><span class="num">14</span></button>
+            <button class="screen-btn" data-target="tutor"><span>15. AI Tutor Support</span><span class="num">15</span></button>
+            <button class="screen-btn" data-target="progress"><span>16. Milestone Progress</span><span class="num">16</span></button>
+            <button class="screen-btn" data-target="profile"><span>17. Profile & Settings</span><span class="num">17</span></button>
+          </div>
+        </aside>
+
+        <!-- EMULATOR PHONE WRAP -->
+        <div class="phone-wrap">
+          <div class="phone-label">Live App Mockup</div>
+          <div class="phone" id="emulatorPhone">
+            
+            <!-- Emulator Status Bar -->
+            <div class="status-bar" id="statusBar">
+              <span id="statusTime">09:41</span>
+              <div class="status-icons">
+                <svg viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 21l-12-18h24z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M17 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3h2v-4h-2V7a2 2 0 0 0-2-2z"/></svg>
+              </div>
+            </div>
+
+            <!-- Emulator Bottom Nav -->
+            <nav class="bottom-nav" id="emulatorBottomNav" style="display: none;">
+              <div class="nav-item active" data-tab="dashboard">
+                <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+                <span>Home</span>
+                <div class="nav-dot"></div>
+              </div>
+              <div class="nav-item" data-tab="curriculum">
+                <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div>
+                <span>Learn</span>
+                <div class="nav-dot"></div>
+              </div>
+              <div class="nav-item" data-tab="tutor" id="navItemPractice">
+                <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+                <span>Practice</span>
+                <div class="nav-dot"></div>
+              </div>
+              <div class="nav-item" data-tab="progress">
+                <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg></div>
+                <span>Progress</span>
+                <div class="nav-dot"></div>
+              </div>
+              <div class="nav-item" data-tab="profile">
+                <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                <span>Profile</span>
+                <div class="nav-dot"></div>
+              </div>
+            </nav>
+
+            <!-- Screens will be loaded dynamically by app.js from templates -->
+            <div id="emulatorScreenContent"></div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Global Alert Modals -->
+    <div class="modal" id="alertModal">
+      <div class="modal-content">
+        <div class="modal-icon">🎉</div>
+        <h3 class="modal-title">Assessment Finished</h3>
+        <p class="modal-desc">Details synced successfully across your portfolio showcase.</p>
+        <button class="modal-btn" id="btnModalClose">Continue</button>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PORTFOLIO TOKEN SPECIFICATION
+         ========================================== -->
+    <section class="portfolio-design-tokens">
+      <h2>Visual System Specifications</h2>
+      <p>UI kit design tokens applied to typography, grids, and dark/light color variations.</p>
+      
+      <div class="tokens-grid">
+        <div class="token-group">
+          <h3>Palette Archetypes</h3>
+          <div class="color-swatches">
+            <div class="swatch" style="background:#4F46E5;"><span>#4F46E5</span><br>Primary</div>
+            <div class="swatch" style="background:#06B6D4;"><span>#06B6D4</span><br>Secondary</div>
+            <div class="swatch" style="background:#8B5CF6;"><span>#8B5CF6</span><br>Accent</div>
+            <div class="swatch" style="background:#10B981;"><span>#10B981</span><br>Success</div>
+          </div>
+        </div>
+
+        <div class="token-group">
+          <h3>Layout Rules</h3>
+          <ul>
+            <li><strong>Responsive Wrapping Grid:</strong> Grid scales from 4-columns (desktop) down to 1-column (mobile).</li>
+            <li><strong>Mockup Aspect:</strong> 375px &times; 812px matching standard mobile viewports.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PORTFOLIO WEB FOOTER -->
+  <footer class="portfolio-footer">
+    <p>AdaptEd Adaptive Learning System &copy; 2026. Made by <strong>My Trần</strong> (tranvuuyenmy0305@gmail.com).</p>
+  </footer>
+
+  <!-- =========================================================================
+       HIDDEN TEMPLATES STORAGE
+       ========================================================================= -->
+  <div id="screen-templates" style="display: none;">
+
+    <!-- 01. SPLASH -->
+    <div class="screen splash">
+      <div class="splash-ring splash-ring-1"></div>
+      <div class="splash-ring splash-ring-2"></div>
+      <div class="splash-ring splash-ring-3"></div>
+      <div class="splash-logo-wrap">
+        <div class="splash-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <h1 class="splash-brand">Adapt<span>Ed</span></h1>
+      </div>
+      <div class="splash-tagline">ADAPTIVE ENGLISH LEARNING</div>
+      <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    </div>
+
+    <!-- 02. WELCOME -->
+    <div class="screen welcome">
+      <div class="welcome-hero">
+        <div class="hero-visual">
+          <div class="hero-visual-inner">🎓</div>
+          <span class="floating-chip chip-1">🧠 Adaptive AI</span>
+          <span class="floating-chip chip-2">⚡ Dynamic</span>
+          <span class="floating-chip chip-3">✔ Personalized</span>
+        </div>
+        <h2 class="welcome-headline">An English learning system that <span>adapts to you.</span></h2>
+        <p class="welcome-sub">Powered by learner modeling and intelligent curriculum generation. Your path, your pace.</p>
+      </div>
+      <div class="welcome-actions">
+        <button class="btn-primary btn-get-started">🚀 Get Started</button>
+        <div class="divider-row"><div class="divider-line"></div><span class="divider-text">or continue with</span><div class="divider-line"></div></div>
+        <button class="btn-social btn-google">
+          <svg viewBox="0 0 24 24" width="16" height="16" style="margin-right: 8px;"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.745 1.054 15.036 0 12 0 7.318 0 3.327 2.682 1.39 6.6l3.876 3.165z"/><path fill="#FBBC05" d="M16.04 15.532a7.077 7.077 0 0 1-8.08 0l-3.877 3.164C6.545 22.39 9.127 24 12 24c2.873 0 5.455-1.61 7.917-5.305l-3.876-3.163z"/><path fill="#4285F4" d="M23.49 12.273c0-.818-.082-1.609-.218-2.382H12v4.545h6.49c-.273 1.446-1.09 2.673-2.318 3.5l3.876 3.164c2.264-2.09 3.442-5.173 3.442-8.827z"/><path fill="#34A853" d="M1.39 6.6A11.95 11.95 0 0 0 0 12c0 1.936.464 3.755 1.39 5.4l3.877-3.164a7.077 7.077 0 0 1 0-4.473L1.39 6.6z"/></svg>
+          Continue with Google
+        </button>
+        <button class="btn-text btn-signin-link">Already have an account? Sign In</button>
+      </div>
+    </div>
+
+    <!-- 03. LOGIN -->
+    <div class="screen auth-screen login">
+      <div class="auth-top">
+        <div class="auth-back-row"><span class="btn-back">← Back</span></div>
+        <h2>Welcome back</h2>
+        <p>Sign in to continue your adaptive journey</p>
+      </div>
+      <div class="auth-body">
+        <div class="field-group">
+          <label class="field-label">Email Address</label>
+          <div class="field-input"><input type="email" value="tranvuuyenmy0305@gmail.com" class="sync-email"></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Password</label>
+          <div class="field-input"><input type="password" value="••••••••"><span class="btn-toggle-pwd">👁</span></div>
+        </div>
+        <div class="remember-row">
+          <div class="toggle-sm active" id="loginRememberToggle"><div class="toggle-knob"></div></div>
+          <span class="remember-text">Remember me</span>
+          <span class="forgot-link">Forgot password?</span>
+        </div>
+        <button class="btn-primary-light btn-signin-submit">Sign In</button>
+        <div class="divider-row"><div class="divider-line"></div><span class="divider-text">or</span><div class="divider-line"></div></div>
+        <div class="social-row">
+          <button class="btn-social-sm btn-google-login"><span>G Google</span></button>
+          <button class="btn-social-sm"><span>📘 Facebook</span></button>
+        </div>
+        <div class="sign-up-row">Don't have an account? <span class="btn-signup-link">Sign up</span></div>
+      </div>
+    </div>
+
+    <!-- 04. ONBOARDING - GOALS -->
+    <div class="screen onboarding goals-screen onboarding-goals">
+      <div class="onboarding-top">
+        <div class="ob-step-row"><div class="ob-step done"></div><div class="ob-step active"></div><div class="ob-step"></div><div class="ob-step"></div></div>
+        <h2 class="ob-title">What's your learning goal?</h2>
+        <p class="ob-sub">We'll build your personal curriculum around your goal</p>
+      </div>
+      <div class="ob-body">
+        <div class="ob-card selected" data-val="speaking">
+          <div class="ob-card-icon" style="background:rgba(79,70,229,0.1)">🗣</div>
+          <div class="ob-card-text"><div class="ob-card-title">Speaking Fluency</div><div class="ob-card-sub">Speak confidently in conversations</div></div>
+          <div class="ob-check checked">✔</div>
+        </div>
+        <div class="ob-card" data-val="ielts">
+          <div class="ob-card-icon" style="background:rgba(6,182,212,0.1)">🎓</div>
+          <div class="ob-card-text"><div class="ob-card-title">IELTS Preparation</div><div class="ob-card-sub">Academic English for exams</div></div>
+          <div class="ob-check"></div>
+        </div>
+        <div class="ob-card" data-val="business">
+          <div class="ob-card-icon" style="background:rgba(16,185,129,0.1)">💼</div>
+          <div class="ob-card-text"><div class="ob-card-title">Business English</div><div class="ob-card-sub">Professional communication skills</div></div>
+          <div class="ob-check"></div>
+        </div>
+        <div class="ob-card" data-val="daily">
+          <div class="ob-card-icon" style="background:rgba(245,158,11,0.1)">💬</div>
+          <div class="ob-card-text"><div class="ob-card-title">Daily Communication</div><div class="ob-card-sub">Everyday English conversations</div></div>
+          <div class="ob-check"></div>
+        </div>
+        <div class="ob-card" data-val="travel">
+          <div class="ob-card-icon" style="background:rgba(239,68,68,0.1)">✈</div>
+          <div class="ob-card-text"><div class="ob-card-title">Travel English</div><div class="ob-card-sub">Navigate the world with confidence</div></div>
+          <div class="ob-check"></div>
+        </div>
+        <div class="ai-badge">
+          <div class="ai-badge-text">🧠 <strong>Building your learner model.</strong> Your answers help us generate a personalized curriculum tailored to your unique learning path.</div>
+        </div>
+      </div>
+      <div class="ob-footer">
+        <button class="btn-primary btn-ob-goals-next">Continue →</button>
+      </div>
+    </div>
+
+    <!-- 05. ONBOARDING - STYLE -->
+    <div class="screen onboarding style-screen onboarding-style">
+      <div class="onboarding-top">
+        <div class="ob-step-row"><div class="ob-step done"></div><div class="ob-step done"></div><div class="ob-step active"></div><div class="ob-step"></div></div>
+        <h2 class="ob-title">How do you learn best?</h2>
+        <p class="ob-sub">This shapes what kind of content we show you</p>
+      </div>
+      <div class="ob-body">
+        <div class="style-grid">
+          <div class="style-card selected" data-style="visual">
+            <div class="style-icon">👁</div>
+            <div class="style-title">Visual</div>
+            <div class="style-desc">Diagrams & infographics</div>
+            <div class="style-check">✔</div>
+          </div>
+          <div class="style-card" data-style="auditory">
+            <div class="style-icon">🎧</div>
+            <div class="style-title">Auditory</div>
+            <div class="style-desc">Audio & listening</div>
+            <div class="style-check"></div>
+          </div>
+          <div class="style-card" data-style="interactive">
+            <div class="style-icon">⚡</div>
+            <div class="style-title">Interactive</div>
+            <div class="style-desc">Hands-on exercises</div>
+            <div class="style-check"></div>
+          </div>
+          <div class="style-card" data-style="reading">
+            <div class="style-icon">📖</div>
+            <div class="style-title">Reading</div>
+            <div class="style-desc">Text & reading</div>
+            <div class="style-check"></div>
+          </div>
+        </div>
+        <div class="style-tip-card">
+          <div class="style-tip-title">✨ How this helps</div>
+          <p class="style-tip-desc">Visual learners receive infographic lessons, diagram-based vocabulary, and visual grammar explanations - automatically prioritized in your curriculum.</p>
+        </div>
+      </div>
+      <div class="ob-footer">
+        <button class="btn-primary btn-ob-style-next">Continue →</button>
+      </div>
+    </div>
+
+    <!-- 06. PLACEMENT TEST -->
+    <div class="screen placement">
+      <div class="placement-top">
+        <div class="pt-header"><span class="pt-title">Placement Assessment</span><span class="pt-counter">5/12</span></div>
+        <div class="pt-progress"><div class="pt-progress-fill" style="width: 41.6%;"></div></div>
+        <div class="pt-difficulty"><div class="pt-diff-dot"></div><span class="pt-diff-text">ADAPTIVE - Intermediate</span></div>
+      </div>
+      <div class="pt-body">
+        <div class="pt-question">
+          <div class="pt-q-label">🎧 Listening Comprehension</div>
+          <h3 class="pt-q-text">"She has been working at the company _________ five years."</h3>
+          <button class="pt-audio-btn btn-g-play">▶ Play Audio · 0:12</button>
+        </div>
+        <div class="pt-options">
+          <div class="pt-option correct" data-ans="A"><div class="pt-opt-letter">A</div><span>for</span><span class="opt-check">✔</span></div>
+          <div class="pt-option" data-ans="B"><div class="pt-opt-letter">B</div><span>since</span></div>
+          <div class="pt-option" data-ans="C"><div class="pt-opt-letter">C</div><span>during</span></div>
+          <div class="pt-option" data-ans="D"><div class="pt-opt-letter">D</div><span>within</span></div>
+        </div>
+        <div class="adaptive-hint">
+          <span class="hint-icon">🔄</span>
+          <div class="hint-text"><strong>Adapting now:</strong> Based on your performance, the next question will be at upper-intermediate difficulty. Your listening score is being analyzed.</div>
+        </div>
+      </div>
+      <div class="ob-footer">
+        <button class="btn-primary btn-pt-continue">Continue →</button>
+      </div>
+    </div>
+
+    <!-- 07. CHOOSE EXPERIENCE -->
+    <div class="screen experience-toggle-screen experience-toggle">
+      <div class="onboarding-top" style="background: linear-gradient(145deg, #1e0a5e, #0f0a2e); padding-bottom: 24px;">
+        <h2 class="ob-title" style="font-size: 20px;">Choose Your Experience</h2>
+        <p class="ob-sub">You can change this anytime in Settings</p>
+      </div>
+      <div class="ob-body" style="gap: 14px; padding: 20px 24px;">
+        <div class="experience-card youth-mode selected" data-mode="youth">
+          <div class="exp-card-header"><span class="exp-icon">⚡</span><h3>Youth Mode</h3></div>
+          <p class="exp-desc">Dynamic layouts · Gamification · Vibrant gradients · Compact cards · Streaks & missions</p>
+          <div class="exp-chips"><span class="exp-chip">Gen Z</span><span class="exp-chip">Students</span><span class="exp-chip">Self-learners</span></div>
+          <button class="btn-exp-select">✔ Select Youth Mode</button>
+        </div>
+        <div class="experience-card senior-mode" data-mode="senior">
+          <div class="exp-card-header"><span class="exp-icon">🌿</span><h3>Senior Mode</h3></div>
+          <p class="exp-desc">Larger text · Calm colors · Simplified navigation · High contrast · Voice support</p>
+          <div class="exp-chips"><span class="exp-chip">Older adults</span><span class="exp-chip">Accessibility</span></div>
+          <button class="btn-exp-select">Select Senior Mode</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08. HOME DASHBOARD (YOUTH) -->
+    <div class="screen dashboard youth-mode dashboard-youth">
+      <div class="dash-top">
+        <div class="dash-top-orb-1"></div>
+        <div class="dash-top-orb-2"></div>
+        <div class="dash-greeting-row">
+          <div class="dash-greeting">Good morning, <br><span class="sync-name">My Trần</span></div>
+          <div class="dash-avatar">MT</div>
+        </div>
+        <div class="dash-streak-row">
+          <div class="streak-chip"><span class="val sync-streak-val">14</span><span class="lbl">Day streak</span></div>
+          <div class="streak-chip"><span class="val sync-xp-val">2,840</span><span class="lbl">Total XP</span></div>
+          <div class="streak-chip"><span class="val sync-level-badge">B2</span><span class="lbl">Level</span></div>
+        </div>
+      </div>
+      <div class="dash-scroll">
+        <div class="insight-card">
+          <div class="insight-top">
+            <span class="insight-badge">🚨 ADAPTIVE INSIGHT</span>
+            <span class="insight-arrow">→</span>
+          </div>
+          <div class="insight-title">Listening is your weakest skill right now</div>
+          <p class="insight-sub">Your listening accuracy dropped 12% this week. Today's curriculum has been adjusted to prioritize listening practice.</p>
+          <button class="insight-btn btn-rec-lesson-trigger">Start Recommended Lesson →</button>
+        </div>
+
+        <div class="s-header">
+          <span class="s-title">Your Learner Model</span>
+          <span class="s-link btn-analytics-trigger" style="cursor: pointer;">Full Analytics →</span>
+        </div>
+
+        <div class="radar-card">
+          <div class="radar-wrap">
+            <div class="radar-svg-wrap">
+              <svg width="68" height="68" viewBox="0 0 100 100">
+                <polygon points="50,10 88,38 73,82 27,82 12,38" fill="none" stroke="var(--border)" stroke-width="1"/>
+                <polygon points="50,25 78,46 68,76 32,76 22,46" fill="none" stroke="var(--border)" stroke-dasharray="2" stroke-width="1"/>
+                <polygon points="50,28 80,44 61,65 36,69 23,43" fill="rgba(79,70,229,0.2)" stroke="var(--primary)" stroke-width="2" class="sync-radar-poly"/>
+              </svg>
+            </div>
+            <div class="radar-skills">
+              <div class="skill-row">
+                <div class="skill-dot" style="background:#4F46E5;"></div>
+                <span class="skill-name">Grammar</span>
+                <span class="skill-pct sync-gram-pct">75%</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-dot" style="background:#06B6D4;"></div>
+                <span class="skill-name">Vocabulary</span>
+                <span class="skill-pct sync-vocab-pct">82%</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-dot" style="background:#EF4444;"></div>
+                <span class="skill-name">Listening</span>
+                <span class="skill-pct sync-listen-pct">48%</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-dot" style="background:#8B5CF6;"></div>
+                <span class="skill-name">Speaking</span>
+                <span class="skill-pct sync-speak-pct">61%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="s-header"><span class="s-title">Today's Recommendations</span><span class="s-link btn-recommendations-trigger" style="cursor: pointer;">See all</span></div>
+        <div class="rec-scroll">
+          <div class="rec-card rec-card-2 btn-lesson-trigger">
+            <span class="rec-type">⚡ Priority - Listening</span>
+            <h4 class="rec-name">Academic Listening Practice</h4>
+            <span class="rec-meta">18 min · Intermediate</span>
+            <div class="rec-action">Start Now →</div>
+          </div>
+          <div class="rec-card rec-card-3 btn-lesson-trigger">
+            <span class="rec-type">📚 Vocabulary</span>
+            <h4 class="rec-name">IELTS Academic Vocabulary</h4>
+            <span class="rec-meta">12 min · B2 Level</span>
+            <div class="rec-action">Start Now →</div>
+          </div>
+        </div>
+
+        <div class="alert-card">
+          <span class="alert-icon">⚠</span>
+          <div class="alert-text">
+            <div class="alert-title">Weak Skill Alert: Listening</div>
+            <p class="alert-sub">Your listening accuracy is 48% - below your target of 70%. 3 focused lessons have been added to your curriculum.</p>
+          </div>
+        </div>
+
+        <div class="s-header"><span class="s-title">Daily Missions</span><span class="s-link"><span class="sync-missions-completed">2</span>/4 done</span></div>
+        <div class="missions">
+          <div class="mission-item">
+            <div class="mission-icon" style="background:rgba(16,185,129,0.1);">✅</div>
+            <div class="mission-text">
+              <div class="mission-title">Complete a Vocabulary Lesson</div>
+              <div class="mission-xp">+50 XP · Done</div>
+            </div>
+            <div class="mission-ring">
+              <svg viewBox="0 0 36 36" width="28" height="28"><path fill="none" stroke="var(--border)" stroke-width="3" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/><path fill="none" stroke="var(--green)" stroke-width="3" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/></svg>
+            </div>
+          </div>
+          <div class="mission-item btn-lesson-trigger">
+            <div class="mission-icon" style="background:rgba(79,70,229,0.1);">🎧</div>
+            <div class="mission-text">
+              <div class="mission-title">Practice Listening 15 min</div>
+              <div class="mission-xp">+80 XP · In progress</div>
+            </div>
+            <div class="mission-ring">
+              <svg viewBox="0 0 36 36" width="28" height="28"><path fill="none" stroke="var(--border)" stroke-width="3" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/><path fill="none" stroke="var(--primary)" stroke-width="3" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/></svg>
+            </div>
+          </div>
+          <div class="mission-item btn-tutor-trigger">
+            <div class="mission-icon" style="background:rgba(139,92,246,0.1);">🗣</div>
+            <div class="mission-text">
+              <div class="mission-title">Speaking Practice Session</div>
+              <div class="mission-xp">+100 XP · Not started</div>
+            </div>
+            <div class="mission-ring">
+              <svg viewBox="0 0 36 36" width="28" height="28"><path fill="none" stroke="var(--border)" stroke-width="3" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/><path fill="none" stroke="var(--primary)" stroke-width="3" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09. HOME DASHBOARD (SENIOR) -->
+    <div class="screen dashboard senior-mode dashboard-senior">
+      <div class="dash-top senior-header">
+        <div class="dash-greeting-row">
+          <div class="dash-greeting">Good morning, <br><strong>Bà Lan!</strong></div>
+          <div class="dash-date">Saturday, 24 May 2026</div>
+        </div>
+        <div class="dash-streak-row">
+          <div class="streak-chip senior-chip-streak"><span class="val">🔥 7-day streak</span></div>
+          <div class="streak-chip senior-chip-level"><span class="val">B1 Level</span></div>
+        </div>
+      </div>
+      <div class="dash-scroll">
+        <div class="continue-learning-card btn-lesson-trigger">
+          <div class="cl-header">▶ CONTINUE LEARNING</div>
+          <h3 class="cl-title">Unit 2: Daily Conversation</h3>
+          <p class="cl-subtitle">Lesson 3: At the Doctor's Office</p>
+          <div class="cl-progress-bar-wrap">
+            <div class="cl-progress-bar-fill" style="width: 60%;"></div>
+          </div>
+          <div class="cl-footer">
+            <span class="cl-pct-text">60% complete</span>
+            <button class="btn-primary btn-senior-start-lesson">▶ Start Lesson</button>
+          </div>
+        </div>
+
+        <div class="s-header"><span class="s-title" style="font-size: 16px;">Your Skill Progress</span></div>
+        <div class="senior-skills-list">
+          <div class="senior-skill-card">
+            <div class="ssc-top">
+              <span class="ssc-icon">🗣</span>
+              <span class="ssc-name">Speaking</span>
+              <span class="ssc-meta">Good · 72% accuracy</span>
+            </div>
+            <div class="ssc-bar-wrap"><div class="ssc-bar-fill" style="width: 72%; background: #4F46E5;"></div></div>
+          </div>
+          <div class="senior-skill-card">
+            <div class="ssc-top">
+              <span class="ssc-icon">🎧</span>
+              <span class="ssc-name">Listening</span>
+              <span class="ssc-meta">Needs practice · 55%</span>
+            </div>
+            <div class="ssc-bar-wrap"><div class="ssc-bar-fill" style="width: 55%; background: #F59E0B;"></div></div>
+          </div>
+          <div class="senior-skill-card">
+            <div class="ssc-top">
+              <span class="ssc-icon">📚</span>
+              <span class="ssc-name">Vocabulary</span>
+              <span class="ssc-meta">Excellent · 88%</span>
+            </div>
+            <div class="ssc-bar-wrap"><div class="ssc-bar-fill" style="width: 88%; background: #10B981;"></div></div>
+          </div>
+        </div>
+
+        <div class="senior-goal-banner">
+          <span class="sgb-icon">🔔</span>
+          <div class="sgb-text">
+            <strong>Today's goal:</strong> Complete 1 lesson and 1 listening exercise. You're doing great — 7 days in a row!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. CURRICULUM -->
+    <div class="screen curriculum">
+      <div class="curr-top">
+        <span class="curr-nav-title">Your Curriculum</span>
+        <div class="curr-nav-subtitle">Dynamically generated · Last updated 2 hours ago</div>
+        <div class="curr-filter-row">
+          <button class="curr-filter active">All</button>
+          <button class="curr-filter">Listening</button>
+          <button class="curr-filter">Grammar</button>
+          <button class="curr-filter">Speaking</button>
+        </div>
+      </div>
+      <div class="curr-body">
+        <div class="curr-insight">
+          <span class="hint-icon">🧠</span>
+          <div class="hint-text"><strong>Adaptive Engine Active:</strong> Lessons reordered based on your weak listening score. Speaking tasks reduced difficulty by 1 level.</div>
+        </div>
+
+        <div class="curr-unit">
+          <div class="unit-header">
+            <div class="unit-icon" style="background: rgba(79,70,229,0.1)">🎧</div>
+            <div class="unit-info">
+              <h4 class="unit-name">Unit 1: Listening Mastery</h4>
+              <span class="unit-meta">Priority · 4/8 lessons · Adaptive</span>
+            </div>
+            <div class="unit-progress-circle">
+              <svg viewBox="0 0 36 36" width="36" height="36"><circle fill="none" stroke="var(--border)" stroke-width="3.5" cx="18" cy="18" r="15.915"/><circle fill="none" stroke="var(--primary)" stroke-width="3.5" stroke-dasharray="50, 100" cx="18" cy="18" r="15.915"/></svg>
+            </div>
+          </div>
+          <div class="unit-lessons">
+            <div class="lesson-node btn-lesson-trigger"><div class="lesson-dot done"></div><span class="lesson-title">Intro to Academic Listening</span><span class="lesson-type-badge badge-listen">Listen</span></div>
+            <div class="lesson-node btn-lesson-trigger"><div class="lesson-dot done"></div><span class="lesson-title">Note-taking Strategies</span><span class="lesson-type-badge badge-listen" style="background:rgba(6,182,212,0.1);color:var(--secondary);">Study</span></div>
+            <div class="lesson-node active btn-lesson-trigger">
+              <div class="lesson-dot active"></div>
+              <span class="lesson-title">Detail & Inference Questions <span style="display:block;font-size:10px;color:var(--primary);font-weight:600;margin-top:2px;">← You are here</span></span>
+              <span class="lesson-type-badge badge-listen">Listen</span>
+            </div>
+            <div class="lesson-node"><div class="lesson-dot locked"></div><span class="lesson-title lesson-locked">Map & Diagram Completion</span><span class="lesson-type-badge badge-listen" style="opacity:0.5;">Listen</span></div>
+            <div class="lesson-node"><div class="lesson-dot locked"></div><span class="lesson-title lesson-locked">Multiple Choice Listening</span><span class="lesson-type-badge badge-listen" style="opacity:0.5;">Listen</span></div>
+          </div>
+        </div>
+
+        <div class="curr-unit">
+          <div class="unit-header">
+            <div class="unit-icon" style="background: rgba(16,185,129,0.1)">📚</div>
+            <div class="unit-info">
+              <h4 class="unit-name">Unit 2: Vocabulary Builder</h4>
+              <span class="unit-meta">2/6 lessons · On track</span>
+            </div>
+            <div class="unit-progress-circle">
+              <svg viewBox="0 0 36 36" width="36" height="36"><circle fill="none" stroke="var(--border)" stroke-width="3.5" cx="18" cy="18" r="15.915"/><circle fill="none" stroke="var(--green)" stroke-width="3.5" stroke-dasharray="33, 100" cx="18" cy="18" r="15.915"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. LESSON -->
+    <div class="screen lesson-screen lesson">
+      <div class="lesson-top">
+        <div class="lesson-nav">
+          <div class="back-btn btn-curr-tab-trigger">←</div>
+          <span class="lesson-title-top">Detail & Inference Questions</span>
+          <span class="xp-chip">+80 XP</span>
+        </div>
+        <div class="lesson-progress-row">
+          <div class="lesson-prog-bar"><div class="lesson-prog-fill" style="width: 40%;"></div></div>
+          <span class="lesson-prog-text">2 / 5</span>
+        </div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-phase-badge">📖 Phase 2: Vocabulary</div>
+        <div class="vocab-grid">
+          <div class="vocab-card highlight">
+            <span class="vocab-word">inference</span>
+            <span class="vocab-pron">/ˈɪnfərəns/</span>
+            <span class="vocab-def">A conclusion reached on evidence and reasoning</span>
+          </div>
+          <div class="vocab-card">
+            <span class="vocab-word">deduce</span>
+            <span class="vocab-pron">/dɪˈdjuːs/</span>
+            <span class="vocab-def">Arrive at a conclusion by reasoning</span>
+          </div>
+          <div class="vocab-card">
+            <span class="vocab-word">explicit</span>
+            <span class="vocab-pron">/ɪkˈsplɪsɪt/</span>
+            <span class="vocab-def">Stated clearly and in detail</span>
+          </div>
+          <div class="vocab-card">
+            <span class="vocab-word">implicit</span>
+            <span class="vocab-pron">/ɪmˈplɪsɪt/</span>
+            <span class="vocab-def">Suggested though not directly expressed</span>
+          </div>
+        </div>
+
+        <div class="audio-card">
+          <div class="audio-header">
+            <span class="audio-title">🎧 Listening Passage</span>
+            <span class="audio-diff">Adapted - Your Level</span>
+          </div>
+          <div class="waveform" id="lessonWaveform" style="cursor: pointer;">
+            <div class="wave-bar" style="height: 10px;"></div>
+            <div class="wave-bar" style="height: 24px;"></div>
+            <div class="wave-bar" style="height: 28px;"></div>
+            <div class="wave-bar" style="height: 14px;"></div>
+            <div class="wave-bar" style="height: 22px;"></div>
+            <div class="wave-bar" style="height: 10px;"></div>
+            <div class="wave-bar" style="height: 18px;"></div>
+            <div class="wave-bar" style="height: 24px;"></div>
+            <div class="wave-bar" style="height: 12px;"></div>
+            <div class="wave-bar" style="height: 8px;"></div>
+          </div>
+          <div class="audio-controls">
+            <div class="play-btn btn-g-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+            <span class="audio-time">0:47 / 2:34</span>
+            <button class="speed-btn">1.0x</button>
+          </div>
+        </div>
+
+        <div class="adaptive-tip">
+          <span class="tip-icon">💡</span>
+          <div class="tip-text"><strong>Personalized hint:</strong> Based on your learner profile, focus on tone and attitude questions — these are your most common error type in listening.</div>
+        </div>
+        
+        <button class="btn-primary btn-lesson-complete-action" style="margin-top: 10px;">Finish Lesson</button>
+      </div>
+    </div>
+
+    <!-- 12. ADAPTIVE QUIZ -->
+    <div class="screen quiz-screen quiz">
+      <div class="quiz-top">
+        <div class="quiz-meta">
+          <span class="quiz-title">🧠 Adaptive Quiz</span>
+          <div class="timer-chip"><div class="timer-dot"></div><span class="timer-val">1:24</span></div>
+        </div>
+        <div class="quiz-prog">
+          <div class="quiz-prog-step done"></div>
+          <div class="quiz-prog-step done"></div>
+          <div class="quiz-prog-step done"></div>
+          <div class="quiz-prog-step active"></div>
+          <div class="quiz-prog-step"></div>
+          <div class="quiz-prog-step"></div>
+        </div>
+        <div style="font-size: 10px; color:rgba(255,255,255,0.5); margin-top: 8px;">Question 4 of 8 · Difficulty adapting based on performance</div>
+      </div>
+      <div class="quiz-body">
+        <div class="quiz-q-card">
+          <div class="quiz-q-type">
+            <span>GRAMMAR - PRESENT PERFECT</span>
+            <span class="adaptive-tag">📈 LEVEL INCREASED</span>
+          </div>
+          <h3 class="quiz-q-text">Choose the correct sentence that uses the present perfect appropriately.</h3>
+        </div>
+        <div class="quiz-options">
+          <div class="quiz-option wrong" data-correct="false">
+            <div class="q-opt-bubble">A</div>
+            <span class="q-opt-text">I have seen him yesterday at the market.</span>
+            <span style="color:var(--red); font-weight:bold;">✗</span>
+          </div>
+          <div class="quiz-option correct" data-correct="true">
+            <div class="q-opt-bubble">B</div>
+            <span class="q-opt-text">She has already finished the assignment.</span>
+            <span style="color:var(--green); font-weight:bold;">✓</span>
+          </div>
+          <div class="quiz-option" data-correct="false">
+            <div class="q-opt-bubble">C</div>
+            <span class="q-opt-text">He have lived here since three years.</span>
+          </div>
+          <div class="quiz-option" data-correct="false">
+            <div class="q-opt-bubble">D</div>
+            <span class="q-opt-text">We have been to Paris last summer.</span>
+          </div>
+        </div>
+
+        <div class="feedback-card">
+          <div class="fb-header"><span class="fb-icon">✅</span><span class="fb-title">Correct! Great work.</span></div>
+          <p class="fb-text">Present perfect is used for actions with a connection to the present. "Already" signals a recently completed action — perfect for present perfect.</p>
+          <div class="fb-rec">📈 Your grammar score improved compared to last session. → Review: Time Adverbs with Perfect Tenses</div>
+        </div>
+
+        <button class="btn-primary btn-quiz-next" style="margin-top: 10px;">Next Question →</button>
+      </div>
+    </div>
+
+    <!-- 13. LEARNER ANALYTICS -->
+    <div class="screen analytics">
+      <div class="analytics-top">
+        <h2 class="analytics-title">Learner Analytics</h2>
+        <div class="analytics-sub">Open Learner Model · Updated continuously</div>
+      </div>
+      <div class="analytics-body">
+        <div class="analytics-tabs">
+          <div class="a-tab active">Overview</div>
+          <div class="a-tab">Trends</div>
+          <div class="a-tab">Sessions</div>
+          <div class="a-tab">Predict</div>
+        </div>
+
+        <div class="radar-card-full">
+          <div class="card-title" style="text-align: center;">Skill Competency Map</div>
+          <div class="radar-container">
+            <svg width="90" height="90" viewBox="0 0 120 120">
+              <polygon points="60,10 108,45 89,101 31,101 12,45" fill="none" stroke="#E2E8F0" stroke-width="1" />
+              <polygon points="60,35 88,58 77,90 43,90 32,58" fill="none" stroke="#E2E8F0" stroke-dasharray="2" stroke-width="1" />
+              <polygon points="60,21 95,50 83,85 40,90 28,52" fill="rgba(79, 70, 229, 0.2)" stroke="#4F46E5" stroke-width="2" />
+            </svg>
+            <div class="radar-legend">
+              <div class="radar-legend-item"><div class="legend-color" style="background:#4f46e5;"></div><span class="legend-name">Grammar</span><span class="legend-val">75%</span></div>
+              <div class="radar-legend-item"><div class="legend-color" style="background:#06B6D4;"></div><span class="legend-name">Vocabulary</span><span class="legend-val">82%</span></div>
+              <div class="radar-legend-item"><div class="legend-color" style="background:#EF4444;"></div><span class="legend-name">Listening</span><span class="legend-val">48%</span></div>
+              <div class="radar-legend-item"><div class="legend-color" style="background:#8B5CF6;"></div><span class="legend-name">Speaking</span><span class="legend-val">61%</span></div>
+              <div class="radar-legend-item"><div class="legend-color" style="background:#10B981;"></div><span class="legend-name">Pronun.</span><span class="legend-val">55%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-trend-grid">
+          <div class="skill-trend-card">
+            <div class="stc-header"><span class="stc-name">Grammar</span><span class="stc-change up">+8%</span></div>
+            <div class="stc-val">75%</div>
+            <div class="stc-bar"><div class="stc-bar-fill" style="width: 75%; background: #4F46E5;"></div></div>
+          </div>
+          <div class="skill-trend-card">
+            <div class="stc-header"><span class="stc-name">Listening</span><span class="stc-change down">-12%</span></div>
+            <div class="stc-val">48%</div>
+            <div class="stc-bar"><div class="stc-bar-fill" style="width: 48%; background: #EF4444;"></div></div>
+          </div>
+          <div class="skill-trend-card">
+            <div class="stc-header"><span class="stc-name">Speaking</span><span class="stc-change up">+4%</span></div>
+            <div class="stc-val">61%</div>
+            <div class="stc-bar"><div class="stc-bar-fill" style="width: 61%; background: #8B5CF6;"></div></div>
+          </div>
+          <div class="skill-trend-card">
+            <div class="stc-header"><span class="stc-name">Vocab</span><span class="stc-change up">+6%</span></div>
+            <div class="stc-val">82%</div>
+            <div class="stc-bar"><div class="stc-bar-fill" style="width: 82%; background: #06B6D4;"></div></div>
+          </div>
+        </div>
+
+        <div class="heatmap-card">
+          <div class="heatmap-title">📅 Learning Activity — Last 5 Weeks</div>
+          <div class="heatmap-days">
+            <div class="heatmap-day">M</div><div class="heatmap-day">T</div><div class="heatmap-day">W</div><div class="heatmap-day">T</div><div class="heatmap-day">F</div><div class="heatmap-day">S</div><div class="heatmap-day">S</div>
+          </div>
+          <div class="heatmap-grid">
+            <div class="heatmap-cell l2"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell"></div>
+            <div class="heatmap-cell l1"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell"></div><div class="heatmap-cell l2"></div>
+            <div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l2"></div>
+            <div class="heatmap-cell l4"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell"></div><div class="heatmap-cell l3"></div>
+            <div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l1"></div>
+          </div>
+        </div>
+
+        <div class="prediction-card">
+          <div class="pred-title">🔮 Performance Prediction</div>
+          <p class="pred-sub">Based on current learning trajectory</p>
+          <div class="pred-metrics">
+            <div class="pred-metric"><div class="pred-metric-val">B2+</div><div class="pred-metric-lbl">Level in 60 days</div></div>
+            <div class="pred-metric"><div class="pred-metric-val">72%</div><div class="pred-metric-lbl">Listen target</div></div>
+            <div class="pred-metric"><div class="pred-metric-val">6.5</div><div class="pred-metric-lbl">IELTS estimate</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. SMART RECOMMENDATIONS -->
+    <div class="screen recommendations-screen recommendations">
+      <div class="analytics-top">
+        <h2 class="analytics-title">Smart Recommendations</h2>
+        <div class="analytics-sub">WASPEC-adaptive engine · Updated this session</div>
+      </div>
+      <div class="analytics-body">
+        <div class="radar-card-full">
+          <div class="card-title" style="margin-bottom: 10px;">⚙️ Adaptive Weight Engine</div>
+          <div style="font-size: 11px; color: var(--text-2); margin-bottom: 12px; text-align:center;">How lessons are being prioritized for you</div>
+          <div class="radar-skills" style="gap: 10px;">
+            <div class="skill-row">
+              <span class="skill-name" style="width: 90px; flex: none;">Weak Skills</span>
+              <div class="skill-bar-wrap" style="width: auto; flex:1;"><div class="skill-bar" style="width: 95%; background: var(--red);"></div></div>
+              <span class="skill-pct" style="color:var(--red);">High</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name" style="width: 90px; flex: none;">Learning Goal</span>
+              <div class="skill-bar-wrap" style="width: auto; flex:1;"><div class="skill-bar" style="width: 80%; background: var(--primary);"></div></div>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name" style="width: 90px; flex: none;">Confidence</span>
+              <div class="skill-bar-wrap" style="width: auto; flex:1;"><div class="skill-bar" style="width: 55%; background: var(--secondary);"></div></div>
+              <span class="skill-pct">55%</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name" style="width: 90px; flex: none;">Preferred Style</span>
+              <div class="skill-bar-wrap" style="width: auto; flex:1;"><div class="skill-bar" style="width: 70%; background: var(--accent);"></div></div>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name" style="width: 90px; flex: none;">Assessment</span>
+              <div class="skill-bar-wrap" style="width: auto; flex:1;"><div class="skill-bar" style="width: 65%; background: var(--green);"></div></div>
+              <span class="skill-pct">65%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="s-header"><span class="s-title">Recommended for You</span><span class="s-link btn-refresh-recommendations" style="cursor:pointer;">Refresh</span></div>
+        <div class="missions" style="gap: 10px;">
+          <div class="mission-item btn-lesson-trigger" style="padding: 14px;">
+            <div class="mission-icon" style="background:rgba(79,70,229,0.1); font-size: 20px;">🎧</div>
+            <div class="mission-text">
+              <div class="mission-title" style="font-weight: 700;">Academic Lecture Listening</div>
+              <div class="mission-xp" style="margin-top: 4px;">18 min · Intermediate · Audio-heavy</div>
+              <div class="mission-xp" style="color:var(--red); font-weight: 600; margin-top: 2px;">⚡ Weak skill priority</div>
+            </div>
+            <div class="rec-priority-badge"><div class="val">1st</div><div class="lbl">Priority</div></div>
+          </div>
+          <div class="mission-item btn-tutor-trigger" style="padding: 14px;">
+            <div class="mission-icon" style="background:rgba(139,92,246,0.1); font-size: 20px;">🗣</div>
+            <div class="mission-text">
+              <div class="mission-title" style="font-weight: 700;">Confidence Builder: Easy Speaking</div>
+              <div class="mission-xp" style="margin-top: 4px;">10 min · B1 Level · Speaking</div>
+              <div class="mission-xp" style="color:var(--accent); font-weight: 600; margin-top: 2px;">🗣 Low confidence detected</div>
+            </div>
+            <div class="rec-priority-badge"><div class="val">2nd</div><div class="lbl">Priority</div></div>
+          </div>
+          <div class="mission-item btn-lesson-trigger" style="padding: 14px;">
+            <div class="mission-icon" style="background:rgba(16,185,129,0.1); font-size: 20px;">🎓</div>
+            <div class="mission-text">
+              <div class="mission-title" style="font-weight: 700;">IELTS Academic Vocabulary</div>
+              <div class="mission-xp" style="margin-top: 4px;">14 min · B2 · Visual cards</div>
+              <div class="mission-xp" style="color:var(--green); font-weight: 600; margin-top: 2px;">🎯 IELTS goal match</div>
+            </div>
+            <div class="rec-priority-badge"><div class="val">3rd</div><div class="lbl">Priority</div></div>
+          </div>
+          <div class="mission-item btn-quiz-trigger" style="padding: 14px;">
+            <div class="mission-icon" style="background:rgba(6,182,212,0.1); font-size: 20px;">📝</div>
+            <div class="mission-text">
+              <div class="mission-title" style="font-weight: 700;">Present Perfect Mastery</div>
+              <div class="mission-xp" style="margin-top: 4px;">12 min · Grammar · Interactive</div>
+              <div class="mission-xp" style="color:var(--secondary); font-weight: 600; margin-top: 2px;">📊 Assessment weakness</div>
+            </div>
+            <div class="rec-priority-badge"><div class="val">4th</div><div class="lbl">Priority</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. AI TUTOR SUPPORT -->
+    <div class="screen tutor">
+      <div class="tutor-top">
+        <div class="tutor-header">
+          <div class="tutor-avatar">🤖</div>
+          <div class="tutor-info">
+            <h4 class="tutor-name">Adapted Tutor</h4>
+            <span class="tutor-status"><div class="online-dot"></div>Pedagogical Support Active</span>
+          </div>
+          <span class="tutor-badge">Helper Mode</span>
+        </div>
+        <div class="tutor-chips" style="padding: 10px 0 0;">
+          <div class="sugg-chip highlight btn-sugg-explain">🗣 Explain grammar</div>
+          <div class="sugg-chip btn-sugg-practice">🗣 Practice speaking</div>
+          <div class="sugg-chip">🗣 Pronunciation check</div>
+        </div>
+      </div>
+      <div class="tutor-chat" id="tutorChatLog">
+        <div class="chat-msg bot">
+          <div class="chat-bubble">Hi My! I noticed you got question 3 wrong on the present perfect quiz. Would you like me to explain the rule?</div>
+          <div class="chat-time">2:14 PM</div>
+        </div>
+        <div class="chat-msg user">
+          <div class="chat-bubble">Yes please, I'm confused about "for" vs "since"</div>
+          <div class="chat-time">2:15 PM</div>
+        </div>
+        <div class="chat-msg bot">
+          <div class="chat-bubble">
+            Great question! Here's a simple way to think about it:
+            <div class="grammar-card">
+              <div class="grammar-label">GRAMMAR RULE: FOR VS SINCE</div>
+              <p class="grammar-text">Use <strong>FOR</strong> with a duration (a period of time).<br>Use <strong>SINCE</strong> with a starting point (a specific time).</p>
+              <div class="grammar-example">"I have lived here for 5 years." (duration)<br>"I have lived here since 2019." (starting point)</div>
+            </div>
+          </div>
+          <div class="chat-time">2:15 PM</div>
+        </div>
+      </div>
+      <div class="tutor-input-wrap">
+        <div class="tutor-input"><input type="text" placeholder="Type a question..." id="tutorInputBox"></div>
+        <button class="mic-btn btn-tutor-send"><svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+      </div>
+    </div>
+
+    <!-- 16. MILESTONE PROGRESS -->
+    <div class="screen progress-screen progress">
+      <div class="progress-top">
+        <h2 class="prog-title">Your Progress</h2>
+        <div class="prog-subtitle">14-day learning streak · Keep it up!</div>
+      </div>
+      <div class="prog-body">
+        <div class="xp-card">
+          <div class="xp-header">
+            <span class="xp-level">B2 Intermediate</span>
+            <span class="xp-next">Next level B2+: 3,500 XP</span>
+          </div>
+          <div class="xp-val sync-xp-display">2,840 XP</div>
+          <div class="xp-lbl">Total Experience Points · <span class="sync-xp-to-go">660 XP</span> to go</div>
+          <div class="xp-bar"><div class="xp-bar-fill sync-xp-bar" style="width: 81.1%;"></div></div>
+        </div>
+
+        <div class="weekly-card" style="padding: 14px;">
+          <div class="weekly-title">🔥 Current Streak: <span class="sync-streak-val">14</span> Days</div>
+          <div class="heatmap-days" style="margin-bottom: 2px;">
+            <div class="heatmap-day">M</div><div class="heatmap-day">T</div><div class="heatmap-day">W</div><div class="heatmap-day">T</div><div class="heatmap-day">F</div><div class="heatmap-day">S</div><div class="heatmap-day">S</div>
+          </div>
+          <div class="heatmap-days">
+            <div class="heatmap-day" style="font-size: 14px; color:var(--orange);">●</div>
+            <div class="heatmap-day" style="font-size: 14px; color:var(--orange);">●</div>
+            <div class="heatmap-day" style="font-size: 14px; color:var(--orange);">●</div>
+            <div class="heatmap-day" style="font-size: 14px; color:var(--orange);">●</div>
+            <div class="heatmap-day" style="font-size: 14px; color:var(--orange);">●</div>
+            <div class="heatmap-day" style="font-size: 14px; color:var(--orange);">●</div>
+            <div class="heatmap-day" style="font-size: 14px; color:var(--border);">○</div>
+          </div>
+        </div>
+
+        <div class="weekly-card">
+          <div class="weekly-title">Weekly Study Time</div>
+          <div class="weekly-bars">
+            <div class="week-bar-wrap"><div class="week-bar active" style="height: 60%;"></div><span class="week-day">M</span></div>
+            <div class="week-bar-wrap"><div class="week-bar active" style="height: 40%;"></div><span class="week-day">T</span></div>
+            <div class="week-bar-wrap"><div class="week-bar active" style="height: 75%;"></div><span class="week-day">W</span></div>
+            <div class="week-bar-wrap"><div class="week-bar active" style="height: 50%;"></div><span class="week-day">T</span></div>
+            <div class="week-bar-wrap"><div class="week-bar active" style="height: 80%;"></div><span class="week-day">F</span></div>
+            <div class="week-bar-wrap"><div class="week-bar today" style="height: 90%;"></div><span class="week-day">S</span></div>
+            <div class="week-bar-wrap"><div class="week-bar" style="height: 10%;"></div><span class="week-day">S</span></div>
+          </div>
+        </div>
+
+        <div class="s-header"><span class="s-title">Achievements</span><span class="s-link">See all</span></div>
+        <div class="achievements">
+          <div class="achieve-card"><span class="achieve-icon">🎯</span><span class="achieve-name">First Lesson</span></div>
+          <div class="achieve-card"><span class="achieve-icon">🔥</span><span class="achieve-name">7-Day Streak</span></div>
+          <div class="achieve-card"><span class="achieve-icon">📚</span><span class="achieve-name">50 Lessons</span></div>
+          <div class="achieve-card"><span class="achieve-icon">🏆</span><span class="achieve-name">Quiz Master</span></div>
+          <div class="achieve-card"><span class="achieve-icon">💎</span><span class="achieve-name">B2 Level</span></div>
+          <div class="achieve-card locked"><span class="achieve-icon">🚀</span><span class="achieve-name">30-Day Run</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17. PROFILE & SETTINGS -->
+    <div class="screen profile-screen profile">
+      <div class="profile-top">
+        <div class="profile-avatar-big">👩‍🦱</div>
+        <h2 class="profile-name sync-profile-name">My Trần</h2>
+        <p class="profile-email sync-profile-email">tranvuuyenmy0305@gmail.com</p>
+        <p class="profile-sub-title">🎯 Goal: <span class="sync-profile-goal">IELTS Preparation</span> · <span class="sync-profile-level">B2 Level</span></p>
+      </div>
+      <div class="profile-body">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-val sync-streak-val">14</div><div class="stat-lbl">Day Streak</div></div>
+          <div class="stat-card"><div class="stat-val sync-xp-val">2,840</div><div class="stat-lbl">XP Points</div></div>
+          <div class="stat-card"><div class="stat-val">68</div><div class="stat-lbl">Lessons</div></div>
+          <div class="stat-card"><div class="stat-val sync-level-badge">B2</div><div class="stat-lbl">Level</div></div>
+        </div>
+
+        <div class="profile-list">
+          <div class="profile-section-title">PERSONALIZATION</div>
+          <div class="profile-item btn-edit-goal-trigger">
+            <span class="profile-item-title">Learning Goals</span>
+            <span class="profile-item-val sync-profile-goal">IELTS Preparation</span>
+          </div>
+          <div class="profile-item">
+            <span class="profile-item-title">Learning Style</span>
+            <span class="profile-item-val">Visual Learner</span>
+          </div>
+          <div class="profile-item">
+            <span class="profile-item-title">Learner Model</span>
+            <span class="profile-item-val" style="color:var(--primary);">View your profile data</span>
+          </div>
+
+          <div class="profile-section-title">DISPLAY & ACCESSIBILITY</div>
+          <div class="profile-item">
+            <span class="profile-item-title">Dark Mode</span>
+            <div class="toggle-sm active" id="profileDarkToggle"><div class="toggle-knob"></div></div>
+          </div>
+          <div class="profile-item">
+            <span class="profile-item-title">Senior Mode</span>
+            <div class="toggle-sm" id="profileSeniorToggle"><div class="toggle-knob"></div></div>
+          </div>
+          <div class="profile-item">
+            <span class="profile-item-title">Font Size</span>
+            <span class="profile-item-val">Medium ›</span>
+          </div>
+
+          <div class="profile-section-title">NOTIFICATIONS</div>
+          <div class="profile-item">
+            <span class="profile-item-title">Daily Reminders</span>
+            <div class="toggle-sm active" id="profileRemindersToggle"><div class="toggle-knob"></div></div>
+          </div>
+          <div class="profile-item">
+            <span class="profile-item-title">Progress Reports</span>
+            <div class="toggle-sm active" id="profileReportsToggle"><div class="toggle-knob"></div></div>
+          </div>
+        </div>
+
+        <button class="btn-logout">Sign Out</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

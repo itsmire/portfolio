@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mire — Standalone Tech Preloader</title>
+  <style>
+    /* ----------------------------------------------------
+       1. CẤU HÌNH GIAO DIỆN CHỦ ĐẠO (DARK TECH AESTHETIC)
+       ---------------------------------------------------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      background-color: #070709;
+      height: 100%;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+
+    /* Lớp phủ Preloader toàn màn hình */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #070709;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+      user-select: none;
+    }
+
+    /* Hiệu ứng biến mất (Slide Up) */
+    #preloader.fade-out {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Ambient Glow ở trung tâm */
+    .glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 480px;
+      background: rgba(0, 229, 255, 0.08);
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Canvas vẽ Grid & Particles */
+    #canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Khung chứa nội dung trung tâm */
+    .content-box {
+      position: relative;
+      z-index: 10;
+      max-width: 420px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* ----------------------------------------------------
+       2. LOGO LỤC GIÁC VẼ ĐƯỜNG VIỀN SVG
+       ---------------------------------------------------- */
+    .logo-container {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 24px;
+    }
+    .logo-svg {
+      width: 100%;
+      height: 100%;
+    }
+    /* Vẽ viền lục giác */
+    .hexagon {
+      stroke: #00E5FF;
+      stroke-width: 2.5;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: drawStroke 1.6s ease-in-out forwards;
+    }
+    /* Vẽ ký tự monogram M */
+    .monogram {
+      stroke: #10B981;
+      stroke-width: 3.5;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: drawStroke 1.2s ease-in-out 0.5s forwards;
+    }
+
+    @keyframes drawStroke {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* ----------------------------------------------------
+       3. CONSOLE BOX & HIỆU ỨNG GÕ CHỮ (TYPING EFFECT)
+       ---------------------------------------------------- */
+    .console-box {
+      width: 100%;
+      background: rgba(9, 9, 11, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(16px);
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      min-height: 100px;
+    }
+    .line {
+      margin-bottom: 6px;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .line.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .line-cyan {
+      color: #00E5FF;
+    }
+    .line-green {
+      color: #10B981;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    }
+    /* Con trỏ nhấp nháy */
+    .cursor {
+      display: inline-block;
+      width: 7px;
+      height: 14px;
+      background-color: #00E5FF;
+      margin-left: 4px;
+      animation: blink 0.5s infinite;
+      box-shadow: 0 0 6px #00E5FF;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* ----------------------------------------------------
+       4. THANH TIẾN TRÌNH PROGRESS BAR
+       ---------------------------------------------------- */
+    .progress-wrapper {
+      width: 100%;
+    }
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: bold;
+      color: #a1a1aa;
+      margin-bottom: 8px;
+    }
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: #18181b;
+      border-radius: 99px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      padding: 1px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00E5FF, #10B981, #a855f7);
+      border-radius: 99px;
+      box-shadow: 0 0 10px #00E5FF;
+      transition: width 0.1s linear;
+    }
+
+    .footer-label {
+      position: absolute;
+      bottom: 24px;
+      font-size: 10px;
+      color: #52525b;
+      letter-spacing: 0.2em;
+    }
+
+    /* ----------------------------------------------------
+       5. ACCESSIBILITY: KHÔNG CÓ HIỆU ỨNG CHUYỂN ĐỘNG NẾU ĐƯỢC BẬT
+       ---------------------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+      #preloader {
+        transition: opacity 0.3s ease !important;
+        transform: none !important;
+      }
+      .hexagon, .monogram {
+        animation: none !important;
+        stroke-dashoffset: 0 !important;
+      }
+      .cursor {
+        animation: none !important;
+      }
+      .glow, #canvas {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <!-- HỖ TRỢ ACCESSIBILITY: NOSCRIPT FALLBACK
+       Đảm bảo nếu người dùng tắt JavaScript, lớp phủ Preloader sẽ tự động được ẩn đi
+       để nội dung trang bên dưới vẫn truy cập được bình thường. -->
+  <noscript>
+    <style>
+      #preloader {
+        display: none !important;
+      }
+      body {
+        overflow: auto !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- Khung Preloader chính -->
+  <div id="preloader">
+    <div class="glow"></div>
+    <canvas id="canvas"></canvas>
+
+    <div class="content-box">
+      <!-- SVG Drawing Logo chữ M -->
+      <div class="logo-container">
+        <svg class="logo-svg" viewBox="0 0 100 100" fill="none">
+          <polygon class="hexagon" points="50 5, 90 25, 90 75, 50 95, 10 75, 10 25" />
+          <path class="monogram" d="M28 65 V35 L50 55 L72 35 V65" />
+        </svg>
+      </div>
+
+      <!-- Khung Terminal logs -->
+      <div class="console-box">
+        <div id="log-lines"></div>
+        <div id="cursor-line"><span style="color: #52525b;">&gt;</span><span class="cursor"></span></div>
+      </div>
+
+      <!-- Thanh tiến trình % -->
+      <div class="progress-wrapper">
+        <div class="progress-info">
+          <span style="color: #00E5FF;">SYSTEM_BOOT</span>
+          <span id="percent-text" style="color: #10B981;">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nhất quán tên hiển thị Mire ở footer -->
+    <div id="footer-text" class="footer-label"></div>
+  </div>
+
+  <!-- Nội dung website bên dưới -->
+  <div style="padding: 40px; text-align: center; color: white; margin-top: 100px;">
+    <h1 style="font-size: 32px; margin-bottom: 12px;">Chào mừng tới Portfolio của Mire!</h1>
+    <p style="color: #a1a1aa;">Màn hình Preloader đã nạp xong và trượt đi thành công.</p>
+  </div>
+
+  <script>
+    // ----------------------------------------------------
+    // CẤU HÌNH HẰNG SỐ & DỮ LIỆU CÁ NHÂN HÓA Ở ĐẦU SCRIPT
+    // ----------------------------------------------------
+    const CONFIG = {
+      developerName: "Mire",
+      developerRole: "Software Engineer",
+      totalLoadTime: 2500,        // Tổng thời gian loading (2.5 giây)
+      intervalTime: 30,          // Chu kỳ cập nhật tiến trình (ms)
+      canvasGridSize: 45,        // Kích thước ô lưới
+      canvasParticlesCount: 45,  // Số hạt particles
+      logs: [
+        { text: '> Initializing system...', class: 'line-cyan' },
+        { text: '> Loading portfolio modules...', class: 'line-cyan' },
+        { text: '> Welcome, Mire', class: 'line-green' }
+      ]
+    };
+
+    // Thiết lập nhãn footer đồng bộ với hằng số cấu hình
+    document.getElementById('footer-text').textContent = `SYSTEM DEVELOPER • ${CONFIG.developerName.toUpperCase()} PORTFOLIO 2026`;
+
+    const preloaderElement = document.getElementById('preloader');
+    
+    // Khởi chạy Preloader trực tiếp (chạy lại mỗi lần reload trang)
+    runPreloader();
+
+    function runPreloader() {
+      // Kiểm tra preferences reduced motion (accessibility)
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      let animFrameId = null; // Quản lý id animation frame để tránh leak CPU
+      
+      // ----------------------------------------------------
+      // KHỞI CHẠY LOGIC CANVAS (Chỉ chạy nếu không bật chế độ giảm chuyển động)
+      // ----------------------------------------------------
+      if (!prefersReducedMotion) {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        // Xử lý resize màn hình trong lúc đang hiển thị
+        const handleResize = () => {
+          if (canvas) {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+          }
+        };
+        window.addEventListener('resize', handleResize, { passive: true });
+
+        const particles = Array.from({ length: CONFIG.canvasParticlesCount }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: 1 + Math.random() * 1.5,
+          alpha: 0.2 + Math.random() * 0.5
+        }));
+
+        function animate() {
+          ctx.clearRect(0, 0, width, height);
+
+          // Vẽ lưới Grid mờ nền
+          ctx.strokeStyle = 'rgba(0, 229, 255, 0.03)';
+          ctx.lineWidth = 1;
+          for (let x = 0; x < width; x += CONFIG.canvasGridSize) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, height);
+            ctx.stroke();
+          }
+          for (let y = 0; y < height; y += CONFIG.canvasGridSize) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(width, y);
+            ctx.stroke();
+          }
+
+          // Vẽ hạt Particles
+          particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.x < 0 || p.x > width) p.vx *= -1;
+            if (p.y < 0 || p.y > height) p.vy *= -1;
+
+            ctx.fillStyle = '#00E5FF';
+            ctx.globalAlpha = p.alpha;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fill();
+          });
+
+          animFrameId = requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Hàm dọn dẹp các sự kiện chạy ngầm và canvas animation
+        function cleanupCanvas() {
+          window.removeEventListener('resize', handleResize);
+          if (animFrameId) {
+            cancelAnimationFrame(animFrameId);
+            animFrameId = null;
+          }
+        }
+        
+        // Gắn hàm dọn dẹp vào window để kích hoạt khi preloader ẩn xong
+        window.cleanupPreloaderBackground = cleanupCanvas;
+      }
+
+      // ----------------------------------------------------
+      // GÕ CHỮ TRONG CONSOLE TERMINAL
+      // ----------------------------------------------------
+      const logContainer = document.getElementById('log-lines');
+      
+      if (prefersReducedMotion) {
+        // Accessibility: hiện toàn bộ chữ ngay lập tức không delay
+        CONFIG.logs.forEach(log => {
+          const p = document.createElement('p');
+          p.className = `line ${log.class} visible`;
+          p.textContent = log.text;
+          logContainer.appendChild(p);
+        });
+        document.getElementById('cursor-line').style.display = 'none';
+      } else {
+        CONFIG.logs.forEach((log, idx) => {
+          setTimeout(() => {
+            const p = document.createElement('p');
+            p.className = `line ${log.class}`;
+            p.textContent = log.text;
+            logContainer.appendChild(p);
+            setTimeout(() => p.classList.add('visible'), 50);
+          }, idx * 450);
+        });
+      }
+
+      // ----------------------------------------------------
+      // PHẦN TRĂM LOADING PROGRESS BAR
+      // ----------------------------------------------------
+      const fill = document.getElementById('progress-fill');
+      const percentText = document.getElementById('percent-text');
+
+      let currentPercent = 0;
+      const actualDuration = prefersReducedMotion ? 300 : CONFIG.totalLoadTime; // Rút ngắn còn 0.3s nếu bật giảm chuyển động
+      const step = 100 / (actualDuration / CONFIG.intervalTime);
+
+      const progressTimer = setInterval(() => {
+        currentPercent += step;
+        if (currentPercent >= 100) {
+          currentPercent = 100;
+          clearInterval(progressTimer);
+
+          setTimeout(() => {
+            preloaderElement.classList.add('fade-out');
+            document.body.style.overflow = 'auto';
+            
+            // Giải phóng bộ nhớ: Huỷ vòng lặp canvas khi preloader trượt mất
+            if (window.cleanupPreloaderBackground) {
+              window.cleanupPreloaderBackground();
+            }
+          }, prefersReducedMotion ? 50 : 200);
+        }
+        fill.style.width = `${currentPercent}%`;
+        percentText.textContent = `${Math.round(currentPercent)}%`;
+      }, CONFIG.intervalTime);
+    }
+  </script>
+</body>
+</html>

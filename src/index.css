@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --animate-scroll: scroll 20s linear infinite;
+  
+  --transition-bezier: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Glassmorphism custom classes */
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.dark .glass {
+  background: rgba(9, 9, 11, 0.55);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-premium {
+  background: radial-gradient(120% 120% at 50% 10%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.25) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+}
+
+.dark .glass-premium {
+  background: radial-gradient(120% 120% at 50% 10%, rgba(24, 24, 27, 0.7) 0%, rgba(9, 9, 11, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Custom base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+body {
+  @apply bg-zinc-50 text-zinc-600 transition-colors duration-300 antialiased dark:bg-zinc-950 dark:text-zinc-400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  @apply text-zinc-900 font-semibold dark:text-zinc-100;
+  letter-spacing: 0.02em;
+  word-spacing: 0.08em;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 dark:bg-zinc-800 rounded-full hover:bg-zinc-400 dark:hover:bg-zinc-700 transition-colors;
+}
+
+/* Hide scrollbar for specific elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom background glow effects */
+.glow-blur {
+  filter: blur(100px);
+  pointer-events: none;
+}
